@@ -1,59 +1,105 @@
+/* Importamos la fuente */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-/* Estilo global y aurora boreal */
-body {
+
+/* Estilo global */
+* {
     margin: 0;
     padding: 0;
-    font-family: Poppins, sans-serif;
-    overflow-x: hidden;
-    text-align: center;
-    background: linear-gradient(45deg, #ff00ff, #008080, #00ffff);
-    background-size: 400% 400%;
-    animation: aurora 15s infinite;
+    box-sizing: border-box;
 }
-html, body {
-    height: 100%;
-    overflow-y: auto; /* Agregar scroll vertical */
-/* Leyenda del slogan */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #ff4da6, #00d4ff, #8a4b38);
+    background-size: 300% 300%;
+    animation: aurora 12s ease-in-out infinite;
+    text-align: center;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+header {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
 .slogan {
     margin-top: 10px;
     font-size: 24px;
     color: white;
     font-style: italic;
-    text-align: center;
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* Contenedor principal */
+.slogan:hover {
+    opacity: 0.8;
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.action-button {
+    width: 70px;
+    height: 70px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    transform: scale(1.15) translateY(-5px);
+    opacity: 0.9;
+}
+
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto; /* Centrar horizontalmente */
     padding: 20px;
-}
-
-/* Títulos */
-h1, h2 {
     text-align: center;
-    color: #8a4b38;
-}
-
-/* Grid de productos */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
 }
 
 /* Tarjetas de productos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas exactas */
+    gap: 20px;
+    justify-content: center; /* Asegura el centrado del contenido */
+    margin-top: 30px;
+}
+
+/* Tarjetas */
 .product-card {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 350px; /* Tamaño máximo de las tarjetas */
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}
+.product-card:hover {
+    transform: translateY(-8px);
 }
 
 .product-image {
@@ -63,31 +109,29 @@ h1, h2 {
 }
 
 .product-info {
-    padding: 20px;
+    padding: 15px;
 }
 
 .product-title {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-bottom: 10px;
     color: #8a4b38;
 }
 
 .product-description {
     font-size: 0.9em;
-    color: #666;
+    color: #555;
 }
 
 /* Botón CTA */
 .cta-button {
-    display: block;
-    width: 200px;
-    margin: 40px auto;
-    padding: 15px 30px;
+    display: inline-block;
+    margin: 30px auto;
+    padding: 12px 25px;
     background-color: #8a4b38;
     color: white;
-    text-align: center;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 20px;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
 }
@@ -95,55 +139,10 @@ h1, h2 {
 .cta-button:hover {
     background-color: #6d3c2e;
 }
+
 /* Animación del fondo */
 @keyframes aurora {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-}
-
-/* Encabezado */
-header {
-    padding: 20px;
-    color: white;
-}
-/* Botones como logos */
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.action-button {
-    width: 80px;
-    height: 80px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-/* Animación al pasar el cursor */
-.action-button:hover {
-    transform: scale(1.2) translateY(-10px);
-}
-
-/* Animación al hacer clic: Burbuja explotando */
-.action-button:active {
-    animation: bubble 0.6s ease-out;
-}
-
-/* Definición de la animación de burbuja */
-@keyframes bubble {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.5);
-        opacity: 0.5;
-    }
-    100% {
-        transform: scale(0);
-        opacity: 0;
-    }
 }
