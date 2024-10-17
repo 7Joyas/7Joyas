@@ -50,8 +50,8 @@ header p {
 
 /* Botones con escala al pasar el ratón */
 .action-button {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     cursor: pointer;
 }
