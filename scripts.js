@@ -49,12 +49,25 @@
         return new Map([
             ['Instagram', 'https://www.instagram.com/7joyas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='],
             ['WhatsApp', 'https://wa.me/123456789'],
-            ['Correo', 'mailto:tuemail@correo.com'],
+            ['Correo', createGmailLink('sietejoyas@gmail.com', 'Consulta', 'Hola, quisiera más información.')],
             ['Yappy', 'https://yappy.com/pago'],
             ['Contacto', 'https://wa.me/123456789'],
             ['Línea BASIC', 'https://www.instagram.com/p/ChJNf6Wu9uz/'],
             ['Línea: Rock N Doll', 'https://www.instagram.com/p/CK4Si13hEa4/?img_index=1']
         ]);
+    }
+
+    /**
+     * Crea un enlace de Gmail con los parámetros proporcionados.
+     * @param {string} to - Dirección de correo del destinatario.
+     * @param {string} subject - Asunto del correo.
+     * @param {string} body - Cuerpo del mensaje.
+     * @returns {string} - Enlace de Gmail.
+     */
+    function createGmailLink(to, subject, body) {
+        const encodedSubject = encodeURIComponent(subject);
+        const encodedBody = encodeURIComponent(body);
+        return `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${encodedSubject}&body=${encodedBody}`;
     }
 
     /**
