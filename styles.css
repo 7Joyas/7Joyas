@@ -42,8 +42,8 @@ header p {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin: 20px 0; /* Ajustar espacio vertical */
+    gap: 20px;
+    margin: 5px 0; /* Ajustar espacio vertical */
     flex-wrap: wrap; /* Permitir que los botones se ajusten en pantallas pequeñas */
 }
 
@@ -67,6 +67,7 @@ header p {
     width: 175px; /* Ajustado a un tamaño de 50px */
     height: auto; /* Mantiene la proporción de la imagen */
     cursor: pointer;
+    margin-top: 10px;
     transition: transform 0.3s ease;
 }
 /* Contenedor de productos */
