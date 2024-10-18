@@ -12,6 +12,8 @@
         const urls = getUrls();
         if (urls.has(altText)) {
             safeOpen(urls.get(altText));
+        } else {
+            console.warn(`URL no encontrada para: ${altText}`);
         }
     }
 
