@@ -24,7 +24,7 @@ header {
 }
 
 header img {
-    max-width: 100px; /* Tamaño del logo */
+    max-width: 200px; /* Tamaño del logo */
     margin-bottom: 10px; /* Separación del título */
 }
 
@@ -45,13 +45,14 @@ header p {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 /* Botones con escala al pasar el ratón */
 .action-button {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     cursor: pointer;
 }
@@ -108,7 +109,7 @@ header p {
 .cta-button {
     display: inline-block;
     margin: 30px auto;
-    padding: 12px 25px;
+    padding: 15px 25px;
     background-color: #8a4b38;
     color: white;
     text-decoration: none;
@@ -118,5 +119,27 @@ header p {
 }
 
 .cta-button:hover {
-    background-color: #6d3c2e;
+    background-color: #6d3c2e; /* Se añadió el cierre de la regla */
 }
+
+/* Estilos actualizados para el contenedor de Yappy */
+.yappy-container {
+    display: flex; /* Cambiado de flexbox a flex */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.yappy-logo {
+    width: 250px; /* Ajustado a un tamaño de 50px */
+    height: auto; /* Mantiene la proporción de la imagen */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.yappy-logo:hover {
+    transform: scale(1.1);
+}
+
+
